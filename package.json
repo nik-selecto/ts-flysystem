@@ -4,8 +4,9 @@
     "start": "node dist"
   },
   "name": "@nik-selecto/ts-flysystem",
-  "version": "1.0.2",
-  "main": "dist",
+  "version": "1.0.4",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/nik-selecto/ts-flysystem.git",
   "author": "nik-selecto",
   "license": "MIT",
