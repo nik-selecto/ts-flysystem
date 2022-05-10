@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "npx tsc -p tsconfig.json",
-    "start": "node dist"
+    "start": "node dist",
+    "prepublish": "npm run build"
   },
   "name": "@nik-selecto/ts-flysystem",
   "version": "1.0.11",
