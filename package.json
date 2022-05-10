@@ -4,7 +4,7 @@
     "start": "node dist"
   },
   "name": "ts-flysystem",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "dist",
   "repository": "https://github.com/nik-selecto/ts-flysystem.git",
   "author": "nik-selecto",
