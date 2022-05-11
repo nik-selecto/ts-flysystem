@@ -1,5 +1,5 @@
 import { IMimeTypeDetector } from '../interfaces';
-import { fileTypeFromBuffer, fileTypeFromFile, fileTypeFromStream } from 'file-type';
+import { fromBuffer, fromFile, fromStream } from 'file-type';
 import { extname } from 'path';
 import { getType as getMimeType } from 'mime';
 import { Readable as ReadableStream, Stream } from 'stream';
@@ -24,9 +24,9 @@ export class FInfoMimeTypeDetector implements IMimeTypeDetector {
   public async detectMimeTypeFromBuffer(contents: string | Buffer | Stream): Promise<string | void> {
     let mimetype;
     if (contents instanceof Stream) {
-      mimetype = await fileTypeFromStream(contents as ReadableStream);
+      mimetype = await fromStream(contents as ReadableStream);
     } else {
-      mimetype = await fileTypeFromBuffer(contents as Buffer);
+      mimetype = await fromBuffer(contents as Buffer);
     }
     if (mimetype) {
       return mimetype.mime;
@@ -34,7 +34,7 @@ export class FInfoMimeTypeDetector implements IMimeTypeDetector {
   }
 
   public async detectMimeTypeFromFile(path: string): Promise<string | void> {
-    const mimetype = await fileTypeFromFile(path);
+    const mimetype = await fromFile(path);
     if (mimetype) {
       return mimetype.mime;
     }

@@ -1,5 +1,5 @@
 import { Stats } from 'fs';
-import { fileTypeFromBuffer, fileTypeFromFile } from 'file-type';
+import { fromBuffer, fromFile } from 'file-type';
 import { getType as getMimeType } from 'mime';
 import { extname } from 'path';
 import { Readable, Stream } from 'stream';
@@ -17,13 +17,13 @@ export function getType(stats: Stats): FileType {
 
 export async function guessMimeType(path: string, content?: Buffer): Promise<string | undefined> {
   if (content) {
-    const mimetype = await fileTypeFromBuffer(content);
+    const mimetype = await fromBuffer(content);
     if (mimetype) {
       return mimetype.mime;
     }
   }
 
-  const mimetype = await fileTypeFromFile(path);
+  const mimetype = await fromFile(path);
   if (mimetype) {
     return mimetype.mime;
   }
