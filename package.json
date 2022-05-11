@@ -13,7 +13,15 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@nestjs/common": "^8.4.4",
+    "@types/lodash": "^4.14.182",
+    "@types/mime": "^2.0.3",
     "@types/node": "^17.0.31",
+    "lodash": "^4.17.21",
     "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "file-type": "^17.1.1",
+    "mime": "^3.0.0"
   }
 }
